@@ -18,7 +18,7 @@ all: encriptpf.sql encript.sqlrpgle decript.sqlrpgle
 	liblist -a $(LIBLIST);\
 	system "CRTBNDRPG PGM($(BIN_LIB)/$*) SRCSTMF('/home/JOMUMA/encript/qrpglesrc/$*.rpgle') DBGVIEW(*ALL) OPTION(*EVENTF)"	
 	system "CPYFRMSTMF FROMSTMF('/home/JOMUMA/encript/qrpglesrc/$*.rpgle') TOMBR('/QSYS.LIB/$(BIN_LIB).LIB/QRPGLESRC.FILE/$*.MBR') MBROPT(*REPLACE)"
-	system "CHGPFM FILE($(BIN_LIB)/QRPGLESRC) MBR($*) SRCTYPE(SQLRPGLE)"
+	system "CHGPFM FILE($(BIN_LIB)/QRPGLESRC) MBR($*) SRCTYPE(RPGLE)"
 
 %.sql:
 	system -s "CHGATR OBJ('/home/JOMUMA/encript/qsqlsrc/$*.sql') ATR(*CCSID) VALUE(1252)"
